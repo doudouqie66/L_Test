@@ -5,7 +5,9 @@ local RootPath = UGCMapInfoLib.GetRootLongPackagePath()
 
 L_Enum.Name_ClassPath = {
     MainUI = RootPath .. "Asset/Blueprint/UI/UI_Main.UI_Main_C",
-    Tips_01 = RootPath .. "Asset/Blueprint/L_Com/Tips/Tips_01.Tips_01_C"
+    Tips_01 = RootPath .. "Asset/Blueprint/L_Com/Tips/Tips_01.Tips_01_C",
+    UI12 = RootPath .. "Asset/Blueprint/Yan/UI/UI12.UI12_C",
+    UI13 = RootPath .. "Asset/Blueprint/Yan/UI/UI13.UI13_C"
 }
 
 --[[----------------------材质的路径-----------------------]] --

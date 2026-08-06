@@ -4,7 +4,15 @@ L_GloTools.UI_Visibility_Map = L_GloTools.UI_Visibility_Map or {} -- 缓存UI原
 local Jetpack_Particle_Interval = 0.6 -- 冲天炮上升粒子重复间隔
 
 --[[----------------------管理UI显示隐藏------------------------]]
-function L_GloTools.UIMgr(str, bVisible)
+function L_GloTools.UIMgr(str, bVisible, SoundBool)
+
+    ---音效处理
+    if SoundBool == true then
+        SoundMgr.PlaySound2D(SoundMgr.SoundName.UI_Click)
+    else
+        SoundMgr.PlaySound2D(SoundMgr.SoundName.UI_Switch)
+    end
+
     local UI_BP = L_GloTools.UI_Map[str]
 
     if UI_BP == nil then
@@ -157,11 +165,13 @@ function L_GloTools.SetJetpackParticles(Player_Pawn, Is_Playing)
             end
             if Is_Playing then
                 L_GloTools.EmitJetpackParticles(Jetpack_Actor)
-                Jetpack_Actor.Jetpack_Particle_Timer_Delegate = ObjectExtend.CreateDelegate(Jetpack_Actor, function()
-                    L_GloTools.EmitJetpackParticles(Jetpack_Actor)
-                end)
-                Jetpack_Actor.Jetpack_Particle_Timer_Handle = KismetSystemLibrary.K2_SetTimerDelegateForLua(
-                    Jetpack_Actor.Jetpack_Particle_Timer_Delegate, Jetpack_Actor, Jetpack_Particle_Interval, true)
+                Jetpack_Actor.Jetpack_Particle_Timer_Delegate =
+                    ObjectExtend.CreateDelegate(Jetpack_Actor, function()
+                        L_GloTools.EmitJetpackParticles(Jetpack_Actor)
+                    end)
+                Jetpack_Actor.Jetpack_Particle_Timer_Handle =
+                    KismetSystemLibrary.K2_SetTimerDelegateForLua(Jetpack_Actor.Jetpack_Particle_Timer_Delegate,
+                        Jetpack_Actor, Jetpack_Particle_Interval, true)
             end
             return
         end

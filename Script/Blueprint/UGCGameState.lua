@@ -21,16 +21,13 @@ function UGCGameState:InitUI()
         -- 只有客户端加载UI
     else
         L_GloTools.UIMgr(L_Enum.Name_ClassPath.MainUI, true)
-
     end
 
     local MainUI = UGCWidgetManagerSystem.GetMainControlUI()
     if MainUI then
         MainUI.NavigatorPanel:SetVisibility(ESlateVisibility.Collapsed)
         MainUI.Image_0:SetVisibility(ESlateVisibility.Collapsed)
-
         MainUI.CanvasPanel_MiniMapAndSetting:SetVisibility(ESlateVisibility.Collapsed)
-
     end
 
 end

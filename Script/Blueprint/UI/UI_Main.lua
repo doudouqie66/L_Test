@@ -42,10 +42,11 @@ end
 
 function UI_Main:Button_34_OnClicked()
     -- local PC = UGCGameSystem.GetLocalPlayerController()
-    L_TipsTool.ShowTips_01("test")
+    L_GloTools.UIMgr(L_Enum.Name_ClassPath.UI12, true)
 end
 
 function UI_Main:Button_36_OnClicked()
+    L_GloTools.UIMgr(L_Enum.Name_ClassPath.UI13, true)
 end
 
 function UI_Main:Button_37_OnClicked()
