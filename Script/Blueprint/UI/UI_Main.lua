@@ -1,9 +1,6 @@
 ---@class UI_Main_C:UUserWidget
+---@field Button_0 UButton
 ---@field Button_34 UButton
----@field Button_36 UButton
----@field Button_37 UButton
----@field Button_38 UButton
----@field Button_39 UButton
 --Edit Below--
 local UI_Main = {
     bInitDoOnce = false
@@ -33,30 +30,14 @@ function UI_Main:LuaInit()
 
     -- [Editor Generated Lua] BindingEvent Begin:
     self.Button_34.OnClicked:Add(self.Button_34_OnClicked, self);
-    self.Button_36.OnClicked:Add(self.Button_36_OnClicked, self);
-    self.Button_37.OnClicked:Add(self.Button_37_OnClicked, self);
-    self.Button_38.OnClicked:Add(self.Button_38_OnClicked, self);
-    self.Button_39.OnClicked:Add(self.Button_39_OnClicked, self);
+    self.Button_0.OnClicked:Add(self.Button_0_OnClicked, self);
     -- [Editor Generated Lua] BindingEvent End;
 end
 
 function UI_Main:Button_34_OnClicked()
-    -- local PC = UGCGameSystem.GetLocalPlayerController()
-    L_GloTools.UIMgr(L_Enum.Name_ClassPath.UI12, true)
 end
 
-function UI_Main:Button_36_OnClicked()
-    L_GloTools.UIMgr(L_Enum.Name_ClassPath.UI13, true)
-end
-
-function UI_Main:Button_37_OnClicked()
-    return nil;
-end
-
-function UI_Main:Button_38_OnClicked()
-end
-
-function UI_Main:Button_39_OnClicked()
+function UI_Main:Button_0_OnClicked()
 end
 
 -- [Editor Generated Lua] function define End;

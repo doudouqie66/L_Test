@@ -12,6 +12,7 @@
 ---@field Button_200 UButton
 ---@field Image_70 UImage
 ---@field Image_100 UImage
+---@field TextBlock_165 UTextBlock
 --Edit Below--
 local UI12 = {
     bInitDoOnce = false
@@ -21,28 +22,18 @@ function UI12:Construct()
     self:LuaInit();
 
 end
-
--- function UI12:Tick(MyGeometry, InDeltaTime)
-
--- end
-
--- function UI12:Destruct()
-
--- end
-
--- [Editor Generated Lua] function define Begin:
 function UI12:LuaInit()
     if self.bInitDoOnce then
         return;
     end
     self.bInitDoOnce = true;
-    -- [Editor Generated Lua] BindingProperty Begin:
-    -- [Editor Generated Lua] BindingProperty End;
-
-    -- [Editor Generated Lua] BindingEvent Begin:
     self.Button_147.OnClicked:Add(self.Button_147_OnClicked, self);
     self.Button_177.OnClicked:Add(self.Button_177_OnClicked, self);
-    -- [Editor Generated Lua] BindingEvent End;
+end
+
+function UI12:UIInit()
+    ----检查免费次数
+
 end
 
 function UI12:Button_147_OnClicked()
