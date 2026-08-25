@@ -13,7 +13,7 @@ end
 
 function UGCPlayerController:Init()
 
-    -- 2秒后执行,等待玩家角色初始化完成
+    -- 2秒后执行,等待玩家角色初始化完成，发放东西
     UGCTimerUtility.CreateLuaTimer(2.0, function()
         if self:HasAuthority() == true then
             local PP = self:GetPlayerCharacterSafety()
