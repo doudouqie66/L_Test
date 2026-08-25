@@ -18,7 +18,7 @@ function UGCPlayerController:Init()
         if self:HasAuthority() == true then
             local PP = self:GetPlayerCharacterSafety()
             UGCBackpackSystemV2.AddItemV2(PP, 8310001, 100) -- v2背包发放物品
-            UGCBackpackSystemV2.AddItemV2(PP, 8310002, 100) -- v2背包发放物品
+            -- UGCBackpackSystemV2.AddItemV2(PP, 8310002, 100) -- v2背包发放物品
 
         end
     end, false)
